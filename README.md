@@ -4,12 +4,10 @@
 |------|----|-------|
 |name|string|null: false|
 
-
 ### Association
 - has_many :groups_users
 - has_many :users, throught: :groups_users
 - has_many :messages
-
 
 ## usersテーブル
 
@@ -22,6 +20,8 @@
 - has_many :groups, throught: :groups_users
 - has_many :messages
 
+#### Index
+- add_index :users,  :name
 
 ## groups_usersテーブル
 
