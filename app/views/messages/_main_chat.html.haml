@@ -1,0 +1,34 @@
+.chat-main
+  .chat-main__group-info
+    .group-info-items
+      .group-info-items__name
+        test
+      .group-info-items__button
+        = link_to "#", class:"group-info-items__button__edit-btn" do
+          Edit
+    .group-info-member-list
+      Member：taro, jiro, …
+  .chat-main__message-list
+    .message-items
+      .message-items__top-items
+        .message-items__top-items__name
+          taro
+        .message-items__top-items__time
+          2020/01/01
+      .message-items__message
+        happy new year!
+    .message-items
+      .message-items__top-items
+        .message-items__top-items__name
+          jiro
+        .message-items__top-items__time
+          2020/01/02
+      .message-items__message
+        thank you!
+  %form.chat-main__message-form
+    .bottom-items
+      %input.bottom-items__message{name: "message", placeholder: "type a message", type: "text", value: ""}
+      %label{class: "bottom-items__image"}
+        %icon.fa.fa-image.fa-lg
+        %input.bottom-items__image{type: "file", style: "display:none;"}
+    %input.bottom-items__button{name: "submit-btn", type: "submit", value: "Send"}
