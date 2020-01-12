@@ -1,4 +1,12 @@
 $mainWhiteColor: #ffffff;
+$mainBlueColor:  #38aef0;
+$mainFontColor: #333333;
+$subFontColor: #999999;
+$sideBgColor: #253141;
+$sideBgColor-GroupList: #2f3e51;
+$messageListBgColor:#fafafa;
+$messageFormBgColor:#d2d2d2;
+$FormPlaceholderColor:#434a54;
 
 * {
   box-sizing: border-box;
@@ -12,13 +20,13 @@ $mainWhiteColor: #ffffff;
 .side-bar{
   height: 100vh;
   width: 300px;
-  background-color: #253141;
+  background-color: $sideBgColor;
   color: $mainWhiteColor;
   font-weight: bold;
   &__user-name{
     height: 100px;
     width: 100%;
-    background-color: #253141;
+    background-color: $sideBgColor;
     padding: 0px 20px;
     line-height: 100px;
     .top-items{
@@ -45,7 +53,7 @@ $mainWhiteColor: #ffffff;
   .side-bar__group-list{
     height: calc(100% - 100px);
     width: 100%;
-    background-color: #2f3e51;
+    background-color: $sideGroupListColor;
     padding: 20px 20px;
     .group-list-items{
       &__name{
@@ -73,7 +81,7 @@ $mainWhiteColor: #ffffff;
       display: flex;
       justify-content: space-between;
       &__name{
-        color: #333333;
+        color: $mainFontColor;
         font-size: 20px;
         margin-top: 35px;
         margin-bottom: 15px;
@@ -84,7 +92,7 @@ $mainWhiteColor: #ffffff;
         &__edit-btn{
           display:block;
           height: 40px;
-          color: #38aef0;
+          color: $mainBlueColor;
           font-size: 16px;
           line-height: 40px;
           text-decoration-line: none;
@@ -94,14 +102,14 @@ $mainWhiteColor: #ffffff;
       }
     }
     .group-info-member-list{
-      color: #999999;
+      color: $subFontColor;
       font-size: 12px;
     }
   }
   .chat-main__message-list{
     height: calc(100% - 190px);
     width: 100%;
-    background-color: #fafafa;
+    background-color: $messageListBgColor;
     padding-top: 35px;
     padding-left: 40px;
     .message-items{
@@ -111,17 +119,17 @@ $mainWhiteColor: #ffffff;
         justify-content: left;
         margin-bottom: 12px;
         &__name{
-          color: #333333;
+          color: $mainFontColor;
           font-size: 16px;
         }
         &__time{
-          color: #999999;
+          color: $subFontColor;
           font-size: 12px;
           margin-left: 10px;
         }
       }
       &__message{
-        color: #434a54;
+        color: $FormPlaceholderColor;
         font-size: 14px;
       }
     }
@@ -129,7 +137,7 @@ $mainWhiteColor: #ffffff;
   .chat-main__message-form{
     height: 90px;
     width: 100%;
-    background-color: #d2d2d2;
+    background-color: $messageFormBgColor;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
@@ -157,7 +165,7 @@ $mainWhiteColor: #ffffff;
       color: $mainWhiteColor;
       height: 50px;
       width: 100px;
-      background-color: #38AEF0;
+      background-color: $mainBlueColor;
       line-height: 50px;
       padding: 0 30px;
       margin-left: 15px;
