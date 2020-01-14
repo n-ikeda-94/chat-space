@@ -53,7 +53,7 @@ $FormPlaceholderColor:#434a54;
   .side-bar__group-list{
     height: calc(100% - 100px);
     width: 100%;
-    background-color: $sideGroupListColor;
+    background-color: $sideBgColor-GroupList;
     padding: 20px 20px;
     .group-list-items{
       &__name{
