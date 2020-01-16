@@ -4,7 +4,7 @@
       .group-info-items__name
         test
       .group-info-items__button
-        = link_to "#", class:"group-info-items__button__edit-btn" do
+        = link_to edit_group_path(current_user), class:"group-info-items__button__edit-btn" do
           Edit
     .group-info-member-list
       Member：taro, jiro, …

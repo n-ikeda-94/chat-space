@@ -14,7 +14,7 @@ $FormPlaceholderColor:#434a54;
 
 .wrapper{
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .side-bar{
@@ -59,10 +59,12 @@ $FormPlaceholderColor:#434a54;
       &__name{
         font-size: 15px;
         margin-bottom: 5px;
+        color: $mainWhiteColor;
       }
       &__message{
         font-size: 11px;
         margin-bottom: 40px;
+        color: $mainWhiteColor;
       }
     }
   }

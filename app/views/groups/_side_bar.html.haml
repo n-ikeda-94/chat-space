@@ -9,13 +9,10 @@
         = link_to edit_user_path(current_user), class:"cog-icon"  do
           %i.fa.fa-cog
   .side-bar__group-list
-    .group-list-items
-      .group-list-items__name
-        techexpert
-      .group-list-items__message
-        まだメッセージがありません
-    .group-list-items
-      .group-list-items__name
-        techecamp
-      .group-list-items__message
-        まだメッセージがありません2
+    - current_user.groups.each do |group|
+      .group-list-items
+        = link_to '#' do
+          .group-list-items__name
+            = group.name
+          .group-list-items__message
+            メッセージはまだありません。
