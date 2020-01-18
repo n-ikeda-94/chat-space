@@ -26,9 +26,10 @@
       .message-items__message
         thank you!
   %form.chat-main__message-form
-    .bottom-items
-      %input.bottom-items__message{name: "message", placeholder: "type a message", type: "text", value: ""}
-      %label{class: "bottom-items__image"}
-        %icon.fa.fa-image.fa-lg
-        %input.bottom-items__image{type: "file", style: "display:none;"}
-    %input.bottom-items__button{name: "submit-btn", type: "submit", value: "Send"}
+    = form_for [@group, @message] do |f|
+      .bottom-items
+        %input.bottom-items__message{name: "message", placeholder: "type a message", type: "text", value: ""}
+        %label{class: "bottom-items__image"}
+          %icon.fa.fa-image.fa-lg
+          %input.bottom-items__image{type: "file", style: "display:none;"}
+      %input.bottom-items__button{name: "submit-btn", type: "submit", value: "Send"}
