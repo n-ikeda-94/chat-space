@@ -103,9 +103,14 @@ $FormPlaceholderColor:#434a54;
         }
       }
     }
-    .group-info-member-list{
+    .group-info-member{
       color: $subFontColor;
       font-size: 12px;
+      ul{
+        li{
+          display: inline;
+        }
+      }
     }
   }
   .chat-main__message-list{
@@ -137,41 +142,50 @@ $FormPlaceholderColor:#434a54;
     }
   }
   .chat-main__message-form{
-    height: 90px;
     width: 100%;
     background-color: $messageFormBgColor;
-    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
-    .bottom-items{
-      height: 50px;
+    .new_message{
+      height: 90px;
       width: 100%;
-      background-color: $mainWhiteColor;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
-      position: relative;
-      &__message{
+      .bottom-items{
+        height: 50px;
         width: 100%;
-        border:solid 0px;
-        padding-right: 40px;
-        padding-left: 10px;
+        background-color: $mainWhiteColor;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &__message{
+          line-height: 50px;
+          width: 100%;
+          border:solid 0px;
+          padding-right: 40px;
+          padding-left: 10px;
+          position: absolute;
+        }
+        &__image{
+          line-height: 50px;
+          position: absolute;
+          right: 10px;
+          cursor: pointer;
+        }
       }
-      &__image{
-        line-height: 50px;
-        position: absolute;
-        right: 10px;
-        cursor: pointer;
+      .bottom-items__button{
+        &__btn{
+          color: $mainWhiteColor;
+          height: 50px;
+          width: 100px;
+          background-color: $mainBlueColor;
+          line-height: 50px;
+          padding: 0 30px;
+          margin-left: 15px;
+          cursor: pointer;
+        }
       }
-    }
-    .bottom-items__button{
-      color: $mainWhiteColor;
-      height: 50px;
-      width: 100px;
-      background-color: $mainBlueColor;
-      line-height: 50px;
-      padding: 0 30px;
-      margin-left: 15px;
-      cursor: pointer;
     }
   }
 }

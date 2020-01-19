@@ -2,34 +2,25 @@
   .chat-main__group-info
     .group-info-items
       .group-info-items__name
-        test
+        = @group.name
       .group-info-items__button
-        = link_to edit_group_path(current_user), class:"group-info-items__button__edit-btn" do
+        = link_to edit_group_path(@group[:id]), class:"group-info-items__button__edit-btn" do
           Edit
-    .group-info-member-list
-      Member：taro, jiro, …
+    .group-info-member
+      %ul.group-info-member__list
+        Member:
+        - @group.users.each do |user|
+          %li.group-info-member__list__name 
+            = user [:name]
   .chat-main__message-list
     .message-items
-      .message-items__top-items
-        .message-items__top-items__name
-          taro
-        .message-items__top-items__time
-          2020/01/01
-      .message-items__message
-        happy new year!
-    .message-items
-      .message-items__top-items
-        .message-items__top-items__name
-          jiro
-        .message-items__top-items__time
-          2020/01/02
-      .message-items__message
-        thank you!
-  %form.chat-main__message-form
+      = render @messages
+  .chat-main__message-form
     = form_for [@group, @message] do |f|
       .bottom-items
-        %input.bottom-items__message{name: "message", placeholder: "type a message", type: "text", value: ""}
-        %label{class: "bottom-items__image"}
-          %icon.fa.fa-image.fa-lg
-          %input.bottom-items__image{type: "file", style: "display:none;"}
-      %input.bottom-items__button{name: "submit-btn", type: "submit", value: "Send"}
+        = f.text_field :body, class: 'bottom-items__message', placeholder: 'type a message'
+        = f.label :image, class: 'bottom-items__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'image', style: "display:none;"
+      .bottom-items__button
+        = f.submit 'Send', class: "bottom-items__button__btn"
