@@ -1,11 +1,11 @@
-.message-items
-  .message-items__top-items
-    .message-items__top-items__name
+.message-item{data: {message: {id: message.id}}}
+  .message-item__top-items
+    .message-item__top-items__name
       = message.user.name
-    .message-items__top-items__time
+    .message-item__top-items__time
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .message-items__message
+  .message-item__message
     - if message.body.present?
-      %p.message-items__message__content
+      %p.message-item__message__content
         = message.body
     = image_tag message.image.url, class: '.message-items__image' if message.image.present?
