@@ -75,12 +75,10 @@ $(function(){
         //メッセージが入ったHTMLに、入れ物ごと追加
         $('.chat-main__message-list').append(insertHTML);
         $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
-        $("#new_message")[0].reset();
-        $(".bottom-items__button__btn").prop("disabled", false);
       }
     })
     .fail(function() {
-      console.log('error');
+      alert("自動更新に失敗しました");
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
